@@ -19,6 +19,9 @@ body {
   height: 475px;
 
   display: grid;
+  grid-template-areas:
+    "s1 s1"
+    "s2 s3";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 45% 55%;
 }
@@ -31,17 +34,20 @@ body {
 
 .sect_1 {
   background-color: white;
-  grid-column: span 2;
+  grid-area: s1;
+  /* grid-column: span 2; */
   border-radius: 10px 10px 0px 0px;
 }
 
 .sect_2 {
   background-color: hsl(179, 36%, 52%);
+  grid-area: s2;
   border-radius: 0px 0px 0px 10px;
 }
 
 .sect_3 {
   background-color: hsl(181, 38%, 58%);
+  grid-area: s3;
   border-radius: 0px 0px 10px 0px;
 }
 
@@ -115,4 +121,31 @@ ul {
   list-style: none;
   padding: 0px;
   line-height: 21px;
+}
+
+@media (max-width: 375px) {
+  .card {
+    width: 310px;
+    height: 725px;
+
+    grid-template-areas:
+      "s1"
+      "s2"
+      "s3";
+    grid-template-columns: 1fr;
+    grid-template-rows: 36% 32% 32%;
+  }
+
+  .content {
+    width: 90%;
+    height: 80%;
+  }
+
+  .sect_2 {
+    border-radius: 0px;
+  }
+
+  .sect_3 {
+    border-radius: 0px 0px 10px 10px;
+  }
 }
